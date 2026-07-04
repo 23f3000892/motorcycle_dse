@@ -9,7 +9,8 @@ Author: Devadarshan & ChatGPT
 """
 
 from config.config_loader import ConfigLoader
-
+import generator
+from generator.design_generator import DesignGenerator
 
 def main():
     """Main program entry."""
@@ -32,6 +33,15 @@ def main():
         print(f"  - {section}")
 
     print("\nReady for Design Space Generation.")
+
+    generator = DesignGenerator(config["design_variables"])
+
+    designs = generator.generate()
+
+    print(f"\nGenerated {len(designs)} motorcycle designs.\n")
+
+    for design in designs:
+        print(design)
 
 
 if __name__ == "__main__":
