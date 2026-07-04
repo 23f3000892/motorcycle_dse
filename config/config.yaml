@@ -1,0 +1,61 @@
+# ==========================================================
+# Motorcycle Design Space Exploration Configuration
+# Version: 1.0
+# ==========================================================
+
+project:
+  name: Motorcycle Design Space Exploration
+  version: 1.0
+
+# ----------------------------------------------------------
+# Design Variables
+# ----------------------------------------------------------
+
+design_variables:
+
+  rake:
+    min: 20
+    max: 35
+    step: 1
+    unit: deg
+
+  triple_clamp_offset:
+    min: 20
+    max: 60
+    step: 5
+    unit: mm
+
+  front_wheel_radius:
+    min: 280
+    max: 340
+    step: 10
+    unit: mm
+
+# ----------------------------------------------------------
+# Constants
+# ----------------------------------------------------------
+
+constants:
+
+  gravity:
+    value: 9.81
+    unit: m/s2
+
+# ----------------------------------------------------------
+# Constraints
+# ----------------------------------------------------------
+
+constraints:
+
+  trail:
+    enabled: true
+    min: 80
+    max: 130
+
+# ----------------------------------------------------------
+# Visualization
+# ----------------------------------------------------------
+
+visualization:
+
+  theme: plotly
